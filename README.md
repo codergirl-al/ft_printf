@@ -30,7 +30,7 @@ You have to implement the following conversions:
 
 ## Program:
 Program name | libftprint.a
-| :--- | ---:
+| :--- | :---
 Turn in files  | Makefile, *.h, */*.h, *.c, */*.c
 Makefile | NAME, all, clean, fclean, re
 External functs. | malloc, free, wriet, va_start, va_arg, va_copy, va_end
