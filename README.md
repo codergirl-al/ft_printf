@@ -28,7 +28,8 @@ You have to implement the following conversions:
 * %X Prints a number in hexadecimal (base 16) uppercase format
 * %% Prints a percent sign
 
-## Program:
+## Program
+
 Program name | libftprint.a
 | :--- | :---
 Turn in files  | Makefile, *.h, */*.h, *.c, */*.c
@@ -36,6 +37,11 @@ Makefile | NAME, all, clean, fclean, re
 External functs. | malloc, free, wriet, va_start, va_arg, va_copy, va_end
 Libft authorized | Yes
 Description | Write a library that contains ft_printf(), a function that will mimic the original printf()
+
+## Bonus part
+
+* Manage any combination of the following flags: '-O.' and the field minimum under all conversions
+* Manage all the following flags: '# +' (Yes, one of them is a space)
 
 ## License
 
