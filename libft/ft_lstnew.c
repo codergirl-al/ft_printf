@@ -6,12 +6,20 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 11:24:01 by apeposhi          #+#    #+#             */
-/*   Updated: 2022/11/28 16:23:30 by apeposhi         ###   ########.fr       */
+/*   Updated: 2022/11/29 14:40:35 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+** @brief Creates a new node with the given content.
+**
+** @param content: The pointer to be stored in the content
+** of the newly created node.
+** @return a new node/a size-1 linked list, where lst.next is
+** pointing to NULL.
+*/
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_node;

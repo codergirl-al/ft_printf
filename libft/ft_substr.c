@@ -6,12 +6,22 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 18:40:24 by apeposhi          #+#    #+#             */
-/*   Updated: 2022/11/27 14:05:06 by apeposhi         ###   ########.fr       */
+/*   Updated: 2022/11/29 14:44:55 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+** @brief Cut a substring out of a given string by its starting index
+** and length. Th substring is stored in a new memory address. The
+** original string is left untouched.
+**
+** @param str:     a NULL-terminated string to cut the string from.
+** @paarm start:   the starting index to cut from the string
+** @param max_len: the maximum length to cut from the string
+** @return the newly created substring
+*/
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;

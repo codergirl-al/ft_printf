@@ -6,12 +6,11 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 03:43:56 by apeposhi          #+#    #+#             */
-/*   Updated: 2022/11/27 16:55:28 by apeposhi         ###   ########.fr       */
+/*   Updated: 2022/11/29 14:42:15 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include	<stdio.h>
 
 static char	*dup_until_c(char *str, char c)
 {
@@ -94,6 +93,14 @@ static	char	**free_array(char **ptr, int allocated)
 	return (NULL);
 }
 
+/* 
+** @brief Allocate memory for an array of string that are
+** splitted from a string str by delimiter c.
+** 
+** @param str: the string to be splitted
+** @param c: delimiter
+** @return the splitted string in an array
+*/
 char	**ft_split(char const *s, char c)
 {
 	char	**split_arr;

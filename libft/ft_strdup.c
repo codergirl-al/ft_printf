@@ -6,12 +6,18 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:49:48 by apeposhi          #+#    #+#             */
-/*   Updated: 2022/11/27 17:29:00 by apeposhi         ###   ########.fr       */
+/*   Updated: 2022/11/29 14:42:45 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* 
+** @brief Duplicates a string to a new memory address.
+**
+** @param str: a NULL-terminated stirng
+** @return the new string after duplication from the given string
+*/
 char	*ft_strdup(const char *s)
 {
 	size_t	i;
