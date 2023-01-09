@@ -6,7 +6,7 @@
 #    By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/17 14:25:17 by apeposhi          #+#    #+#              #
-#    Updated: 2023/01/09 14:53:16 by apeposhi         ###   ########.fr        #
+#    Updated: 2023/01/09 15:07:05 by apeposhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ SRC		= ./src/memory/ft_bzero.c\
 	      ./src/string/ft_strlen.c\
 	      ./src/string/ft_tolower.c\
 	      ./src/string/ft_atoi.c\
-	      ./src/string/check/ft_isalnum.c\
+	      ./src/check/ft_isalnum.c\
 	      ./src/check/ft_isdigit.c\
 	      ./src/memory/ft_memcmp.c\
 	      ./src/memory/ft_memset.c\

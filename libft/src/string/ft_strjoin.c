@@ -6,11 +6,11 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 18:44:59 by apeposhi          #+#    #+#             */
-/*   Updated: 2022/11/29 14:43:05 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:07:42 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include "../../includes/libft.h"
 
 /*
 ** @brief Join two strings into a new memory. The second string

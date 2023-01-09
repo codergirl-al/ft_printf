@@ -6,11 +6,11 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 17:32:36 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/01/09 14:50:55 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:07:18 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"cludes/libft.h"
+#include "../../includes/libft.h"
 
 /*
 ** @brief Compare the first different byte found between two strings.
