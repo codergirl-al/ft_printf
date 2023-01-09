@@ -6,50 +6,85 @@
 #    By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/17 14:25:17 by apeposhi          #+#    #+#              #
-#    Updated: 2022/11/26 14:42:29 by apeposhi         ###   ########.fr        #
+#    Updated: 2023/01/09 14:53:16 by apeposhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# myname:
-# 	@clear
-# 	@echo "                                      __     __"
-# 	@echo ".---.-.-----.-----.-----.-----.-----.|  |--.|__|"
-# 	@echo "|  _  |  _  |  -__|  _  |  _  |__ --||     ||  |"
-# 	@echo "|___._|   __|_____|   __|_____|_____||__|__||__|"
-# 	@echo "      |__|        |__|"
+# PROJECT #
+NAME	= libft.a
+CC		= @clang
+CFLAGS	= -Wall -Wextra -Werror
+RM		= @rm -f
+FILE	= $(shell ls -lR src/ | grep -F .c | wc -l)
+CMP		= 1
+CLEAR	= @clear
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
+SRC		= ./src/memory/ft_bzero.c\
+	      ./src/check/ft_isalpha.c\
+	      ./src/check/ft_isprint.c\
+	      ./src/memory/ft_memcpy.c\
+	      ./src/string/ft_strchr.c\
+	      ./src/string/ft_strlcpy.c\
+	      ./src/string/ft_strrchr.c\
+	      ./src/memory/ft_calloc.c\
+	      ./src/check/ft_isascii.c\
+	      ./src/memory/ft_memchr.c\
+	      ./src/memory/ft_memmove.c\
+	      ./src/string/ft_strdup.c\
+	      ./src/string/ft_strlen.c\
+	      ./src/string/ft_tolower.c\
+	      ./src/string/ft_atoi.c\
+	      ./src/string/check/ft_isalnum.c\
+	      ./src/check/ft_isdigit.c\
+	      ./src/memory/ft_memcmp.c\
+	      ./src/memory/ft_memset.c\
+	      ./src/string/ft_strlcat.c\
+	      ./src/string/ft_strnstr.c\
+	      ./src/string/ft_toupper.c\
+	      ./src/string/ft_strncmp.c\
+	      ./src/string/ft_substr.c\
+	      ./src/string/ft_strjoin.c\
+	      ./src/string/ft_strtrim.c\
+	      ./src/string/ft_split.c\
+	      ./src/string/ft_itoa.c\
+	      ./src/string/ft_strmapi.c\
+	      ./src/string/ft_striteri.c\
+	      ./src/print/ft_putchar_fd.c\
+	      ./src/print/ft_putstr_fd.c\
+	      ./src/print/ft_putendl_fd.c\
+	      ./src/print/ft_putnbr_fd.c\
 
-NAME=libft.a
-SRCS=ft_bzero.c ft_isalpha.c    ft_isprint.c    ft_memcpy.c     ft_strchr.c     ft_strlcpy.c    ft_strrchr.c\
-ft_calloc.c     ft_isascii.c    ft_memchr.c     ft_memmove.c    ft_strdup.c     ft_strlen.c     ft_tolower.c\
-ft_atoi.c       ft_isalnum.c    ft_isdigit.c    ft_memcmp.c     ft_memset.c     ft_strlcat.c    ft_strnstr.c    ft_toupper.c\
-ft_strncmp.c	ft_substr.c		ft_strjoin.c	ft_strtrim.c	ft_split.c		ft_itoa.c		ft_strmapi.c	ft_striteri.c\
-ft_putchar_fd.c	ft_putstr_fd.c	ft_putendl_fd.c	ft_putnbr_fd.c
+OBJ=$(SRC:.c=.o)
 
-OBJS=$(SRCS:.c=.o)
-
-BONUSES=ft_lstnew.c		ft_lstadd_front.c		ft_lstsize.c	ft_lstlast.c	ft_lstadd_back.c	ft_lstdelone.c\
-		ft_lstclear.c	ft_lstiter.c	ft_lstmap.c\
+BONUSES	= ./src/list/ft_lstnew.c\
+		  ./src/list/ft_lstadd_front.c\
+		  ./src/list/ft_lstsize.c\
+		  ./src/list/ft_lstlast.c\
+		  ./src/list/ft_lstadd_back.c\
+		  ./src/list/ft_lstdelone.c\
+		  ./src/list/ft_lstclear.c\
+		  ./src/list/ft_lstiter.c\
+		  ./src/list/ft_lstmap.c\
 
 BONUS_OBJS = $(BONUSES:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(SRCS) $(OBJS)
-	@ar rcs $(NAME) $(OBJS)
+$(NAME): $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
 
-bonus:	$(OBJS) $(BONUS_OBJS)
-	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus:	$(OBJ) $(BONUS_OBJS)
+	ar rcs $(NAME) $(OBJ) $(BONUS_OBJS)
 
 clean:
-	rm -f $(OBJS) $(BONUS_OBJS)
+	$(RM) $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
-
-norm: $(SRCS)
-	$(shell norminette $(SRCS) | grep Error)
+	$(RM) $(NAME)
 
 re: fclean all
+
+.SILENT:
+	all
+.PHONY: 
+	all clean fclean re
