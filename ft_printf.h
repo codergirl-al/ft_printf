@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 14:29:47 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/01/09 17:21:45 by apeposhi         ###   ########.fr       */
+/*   Created: 2023/01/09 13:08:12 by apeposhi          #+#    #+#             */
+/*   Updated: 2023/01/09 16:53:32 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	ft_isalpha(int c)
-{
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
-}
+#include <stdarg.h>
+# include "./libft/includes/libft.h"
+
+int	ft_printf(const char *str, ...);
+
+#endif

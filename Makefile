@@ -6,56 +6,55 @@
 #    By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 10:27:31 by apeposhi          #+#    #+#              #
-#    Updated: 2023/01/09 14:43:38 by apeposhi         ###   ########.fr        #
+#    Updated: 2023/01/09 17:20:41 by apeposhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # HEADER
 
-info: header
+# info: header
 
-define HEADER
-	                      *     .--.
-	                           / /  `
-	          +               | |
-	                 '         \ \__,
-	             *          +   '--'  *
-	                 +   /\\
-	    +              .'  '.   *
-	           *      /======\\      +
-	                 ;:.  _   ;
-	                 |:. (_)  |
-	                 |:.  _   |
-	       +         |:. (_)  |          *
-	                 ;:.      ;
-	               .' \:.    / `.
-	              / .-'':._.'`-. \\
-	              |/    /||\    \\|
-	            _..--"""````"""--.._
-	      _.-'``                    ``'-._
-	    -'                                '-
-	                                    _     _ 
-	                                   | |   (_)
-	  ____ ____   ____ ____   ___   ___| | _  _ 
-	 / _  |  _ \ / _  |  _ \ / _ \ /___| || \| |
-	( ( | | | | ( (/ /| | | | |_| |___ | | | | |
-	 \_||_| ||_/ \____| ||_/ \___/(___/|_| |_|_|
-	      |_|         |_|                       
-endef
-export HEADER
+# define HEADER
+# 	                      *     .--.
+# 	                           / /  `
+# 	          +               | |
+# 	                 '         \ \__,
+# 	             *          +   '--'  *
+# 	                 +   /\\
+# 	    +              .'  '.   *
+# 	           *      /======\\      +
+# 	                 ;:.  _   ;
+# 	                 |:. (_)  |
+# 	                 |:.  _   |
+# 	       +         |:. (_)  |          *
+# 	                 ;:.      ;
+# 	               .' \:.    / `.
+# 	              / .-'':._.'`-. \\
+# 	              |/    /||\    \\|
+# 	            _..--"""````"""--.._
+# 	      _.-'``                    ``'-._
+# 	    -'                                '-
+# 	                                    _     _ 
+# 	                                   | |   (_)
+# 	  ____ ____   ____ ____   ___   ___| | _  _ 
+# 	 / _  |  _ \ / _  |  _ \ / _ \ /___| || \| |
+# 	( ( | | | | ( (/ /| | | | |_| |___ | | | | |
+# 	 \_||_| ||_/ \____| ||_/ \___/(___/|_| |_|_|
+# 	      |_|         |_|                       
+# endef
+# export HEADER
 
 #PROJECT
 
 NAME	= libftprint.a
-CC		=cc
+CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 RM		= @rm -f
 CLEAR	= @clear
-FILE	= $(shell ls -l src/ | grep -F .c | wc -l)
 CMP		= 1
 
 # FILE
-SRC		= ./src/ft_printf.c
+SRC		= ./ft_printf.c
 OBJ		= $(SRC:.c=.o)
 
 # LIBFT
@@ -74,25 +73,24 @@ INDI	= \033[38;5;99m
 RESET	= \033[00m
 
 # PRINT
-RNBW	= @printf "$(PURPLE)Printf library is ready to use$(RESET)\n"
 
-header:
-	clear
-	@echo "$$HEADER"
+# header:
+# 	clear
+# 	@echo "$$HEADER"
 
-all: header $(LIBFT_NAME) $(NAME)
+all: $(LIBFT_NAME) $(NAME)
 
 %.o: %.c
-	@printf "\r$(LBLUE)[$(RESET)+$(LBLUE)] $(RESET)Adding $(GREEN)$<$(BLUE) [$(RESET)$(CMP)$(BLUE)/$(RESET)$(FILE)$(BLUE)]$(RESET)\n\r"
 	$(CC) $(CFLAGS) -c $< -o $@
 	@$(eval CMP=$(shell echo $$(($(CMP)+1))))
+
 	
 $(LIBFT_NAME):
 	@make -C $(LIBFT_PATH)
 
 $(NAME): $(OBJ) 
 	@ar rcsT $(NAME) $(OBJ) $(LIBFT_NAME)
-	$(RNBW)
+
 
 clean:
 	@make clean -C $(LIBFT_PATH)
@@ -104,10 +102,11 @@ fclean: clean
 
 re: fclean all
 
-norm: $(SRCS)
-	$(shell norminette $(SRCS) | grep Error)
+norm: $(SRC)
+	$(shell norminette $(SRC) | grep Error)
 
 .SILENT:
 	all
+
 .PHONY: 
 	all libftmake clean fclean re
