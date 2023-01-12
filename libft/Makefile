@@ -6,7 +6,7 @@
 #    By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/17 14:25:17 by apeposhi          #+#    #+#              #
-#    Updated: 2023/01/09 16:38:41 by apeposhi         ###   ########.fr        #
+#    Updated: 2023/01/12 15:55:11 by apeposhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,8 @@ SRC		= ./src/memory/ft_bzero.c\
 	      ./src/print/ft_putnbr_fd.c\
 		  ./src/print/ft_putchar.c\
 		  ./src/print/ft_putstr.c\
+		  ./src/print/ft_puthexa.c\
+		  ./src/print/ft_putnbr.c
 
 OBJ=$(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:24:48 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/01/09 16:52:10 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/01/12 15:55:45 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,8 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 int		ft_putchar(char c);
+int		ft_putstr(char *str);
+int		ft_puthexa(unsigned long long int n, char format);
+int		ft_putnbr(int n);
 
 #endif

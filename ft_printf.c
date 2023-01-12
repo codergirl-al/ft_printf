@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:48:13 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/01/09 16:53:45 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/01/12 16:04:19 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ static int	ft_case(va_list v_list, const char c)
 	{
 		ptr = va_arg(v_list, unsigned long);
 		if (ptr)
-			return (ft_puthexa_u(ptr, c));
+			return (ft_puthexa(ptr, c));
 		return (ft_putstr("(nil"));
 	}
 	else if (c == 'd' || c == 'i')
-		return (ft_putnbr_fd(va_arg(v_list, int), 1));
-	else if (c == 'u')
-		return (ft_putunbr_base(va_arg(v_list, unsigned int), "0123456789"));
+		return (ft_putnbr(va_arg(v_list, int), ));
+	// else if (c == 'u')
+	// 	return (ft_putunbr_base(va_arg(v_list, unsigned int), "0123456789"));
 	else if (c == 'x' || c == 'X')
-		return (ft_puthexa_u(va_arg(v_list, unsigned int), c));
+		return (ft_puthexa(va_arg(v_list, unsigned int), c));
 	else if (c == '%')
 		return (ft_putchar('%'));
 	else
@@ -50,13 +50,13 @@ int	ft_printf(const char *str, ...)
 	va_start(v_list, str);
 	while(str[i])
 	{
-		if (str[i] == '%' && ft_strchr("cspdiuxX%", s[i + 1]) != 0)
+		if (str[i] == '%' && ft_strchr("cspdiuxX%", str[i + 1]) != 0)
 		{
-			count += ft_case(v_list, s[i + 1]);
+			count += ft_case(v_list, str[i + 1]);
 			i++;
 		}
 		else 
-			count += ft_putchar(s[i]);
+			count += ft_putchar(str[i]);
 		i++;
 	}
 	va_end(v_list);
