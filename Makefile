@@ -6,13 +6,25 @@
 #    By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 10:27:31 by apeposhi          #+#    #+#              #
-#    Updated: 2023/01/13 06:08:39 by apeposhi         ###   ########.fr        #
+#    Updated: 2023/01/13 16:39:01 by apeposhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # HEADER
 
 # info: header
+
+# Colors
+
+DEF_COLOR = \033[0;39m
+GRAY = \033[0;90m
+RED = \033[0;91m
+GREEN = \033[0;92m
+YELLOW = \033[0;93m
+BLUE = \033[0;94m
+MAGENTA = \033[0;95m
+CYAN = \033[0;96m
+WHITE = \033[0;97m
 
 define HEADER
 	                      *     .--.
@@ -46,64 +58,53 @@ export HEADER
 
 #PROJECT
 
-NAME	= libftprint.a
+NAME	= libftprintf.a
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
-RM		= @rm -f
+RM		= @rm -rf
 CLEAR	= @clear
 CMP		= 1
+AR			= ar rcs
 
 # FILE
-SRC		= ./src/ft_printf.c
+SRC		= ./srcs/ft_printf.c
 OBJ		= $(SRC:.c=.o)
 
 # LIBFT
-LIBFT_PATH	= ./libft --no-print-directory
-LIBFT_NAME	= ./libft/libft.a
-
-# COLOR
-GREEN	= \033[38;5;76m
-RED		= \033[38;5;160m
-YELLOW	= \033[38;5;226m
-ORANGE	= \033[38;5;202m
-PURPLE	= \033[38;5;213m
-LBLUE	= \033[38;5;51m
-BLUE	= \033[38;5;117m
-INDI	= \033[38;5;99m
-RESET	= \033[00m
+LIBFT_NAME	= libft.a
+LIBFT	= libft
 
 # PRINT
 
-header:
-	clear
-	@echo "$$HEADER"
-
-all: header $(LIBFT_NAME) $(NAME)
+all: header $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 	@$(eval CMP=$(shell echo $$(($(CMP)+1))))
 
-	
-$(LIBFT_NAME):
-	@make -C $(LIBFT_PATH)
-
-$(NAME): $(OBJ) 
-	@ar rcsT $(NAME) $(OBJ) $(LIBFT_NAME)
-
+$(NAME):	$(OBJ)
+			@make -C $(LIBFT)
+			@cp libft/libft.a .
+			@mv libft.a $(NAME)
+			@$(AR) $(NAME) $(OBJ)
+			@echo "$(GREEN)ft_printf compiled!$(DEF_COLOR)"
 
 clean:
-	@make clean -C $(LIBFT_PATH)
+	@make clean -C $(LIBFT)
 	$(RM) $(OBJ)
 
 fclean: clean
-	make fclean -C $(LIBFT_PATH)
+	make fclean -C $(LIBFT)
 	$(RM) $(NAME)
 
 re: fclean all
 
 norm: $(SRC)
 	$(shell norminette $(SRC) | grep Error)
+
+header:
+	clear
+	@echo "$$HEADER"
 
 .SILENT:
 	all

@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:46:42 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/01/13 06:07:01 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/01/13 14:44:22 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,21 @@ int	ft_putnbr(int n)
 	is_neg = (n < 0);
 	ft_bzero(str, 13);
 	if (n == 0)
-		str[0] = '0';
+		return (ft_putchar('0'));
 	length = 0;
 	while (n != 0)
 	{
 		str[length++] = '0' + ft_val(n % 10);
 		n = (n / 10);
 	}
+	count = length;
 	if (is_neg)
+	{
 		str[length] = '-';
+		count++;
+	}
 	else if (length > 0)
 		length--;
-	count = length;
 	while (length >= 0)
 		write(1, &str[length--], 1);
 	return (count);

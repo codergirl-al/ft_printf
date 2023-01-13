@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 06:05:45 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/01/13 06:05:48 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/01/13 14:45:27 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,16 @@ int	ft_putunsigned(unsigned int n)
 
 	ft_bzero(str, 13);
 	if (n == 0)
-		str[0] = '0';
+		return (ft_putchar('0'));
 	length = 0;
 	while (n != 0)
 	{
 		str[length++] = '0' + ft_val(n % 10);
 		n = (n / 10);
 	}
+	count = length;
 	if (length > 0)
 		length--;
-	count = length;
 	while (length >= 0)
 		write(1, &str[length--], 1);
 	return (count);

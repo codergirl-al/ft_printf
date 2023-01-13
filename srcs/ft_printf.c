@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:48:13 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/01/13 06:08:21 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/01/13 14:41:09 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,12 @@
 
 static int	ft_case(va_list v_list, const char c)
 {
-	unsigned long	ptr;
-
 	if (c == 'c')
 		return (ft_putchar(va_arg(v_list, int)));
 	else if (c == 's')
 		return (ft_putstr(va_arg(v_list, char *)));
 	else if (c == 'p')
-	{
-		ptr = va_arg(v_list, unsigned long);
-		if (ptr)
-			return (ft_puthexa(ptr, c));
-		return (ft_putstr("(nil"));
-	}
+		return (ft_putptr(va_arg(v_list, unsigned long)));
 	else if (c == 'd' || c == 'i')
 		return (ft_putnbr(va_arg(v_list, int)));
 	else if (c == 'u')
@@ -60,5 +53,5 @@ int	ft_printf(const char *str, ...)
 		i++;
 	}
 	va_end(v_list);
-	return (0);
+	return (count);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthexa.c                                       :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/10 10:28:41 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/01/13 14:43:01 by apeposhi         ###   ########.fr       */
+/*   Created: 2023/01/13 14:35:15 by apeposhi          #+#    #+#             */
+/*   Updated: 2023/01/13 14:45:56 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,15 @@ static int	ft_decimal_to_hexa(unsigned long long int n, int base, int len)
 	return (len);
 }
 
-int	ft_puthexa(unsigned long long int n, char format)
+int	ft_putptr(unsigned long long int n)
 {
 	unsigned int				len;
 
-	len = 0;
 	if (n == 0)
-		return ft_putchar('0');
-	if (format == 'X')
-		len = ft_decimal_to_hexa(n, 16, len);
-	else
-		len = ft_decimal_to_hexa(n, 48, len);
+		return (ft_putstr("0x0"));
+	len = 0;
+	write(1, "0x", 2);
+	len++;
+	len += ft_decimal_to_hexa(n, 48, len);
 	return (len);
 }

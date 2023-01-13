@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:24:48 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/01/13 06:04:16 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/01/13 14:37:12 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,6 @@ int		ft_putstr(char *str);
 int		ft_puthexa(unsigned long long int n, char format);
 int		ft_putnbr(int n);
 int		ft_putunsigned(unsigned int n);
+int		ft_putptr(unsigned long long int n);
 
 #endif
