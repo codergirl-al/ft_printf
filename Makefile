@@ -6,7 +6,7 @@
 #    By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 10:27:31 by apeposhi          #+#    #+#              #
-#    Updated: 2023/01/12 14:59:34 by apeposhi         ###   ########.fr        #
+#    Updated: 2023/01/13 06:08:39 by apeposhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ CLEAR	= @clear
 CMP		= 1
 
 # FILE
-SRC		= ./ft_printf.c ./test.c
+SRC		= ./src/ft_printf.c
 OBJ		= $(SRC:.c=.o)
 
 # LIBFT
