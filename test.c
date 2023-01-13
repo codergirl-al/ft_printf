@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "./include/ft_printf.h"
+#include <limits.h>
 
 int main()
 {
@@ -7,8 +8,8 @@ int main()
 	void *ptr;
 	ptr = &alba;
 	
-	printf("printf: %d", printf("PRINT THIS: \001\002\007\v\010\f\r\n"));
-	ft_printf("ftprintf: %d", ft_printf("PRINT THIS: \001\002\007\v\010\f\r\n"));
+	printf ("%d\n", INT_MIN);
+	ft_printf ("%d\n", INT_MIN);
 	// printf("Pointer value is: %p\n", ptr);
 	// ft_printf("UPPERCASE value is: %X\n", alba);
 	// ft_printf("LOWERCASE value is: %x\n", alba);

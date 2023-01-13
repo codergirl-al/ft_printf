@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 10:28:41 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/01/13 14:43:01 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/01/13 16:40:34 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_puthexa(unsigned long long int n, char format)
 
 	len = 0;
 	if (n == 0)
-		return ft_putchar('0');
+		return (ft_putchar('0'));
 	if (format == 'X')
 		len = ft_decimal_to_hexa(n, 16, len);
 	else
