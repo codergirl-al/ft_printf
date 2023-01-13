@@ -11,7 +11,7 @@ static int	ft_val(int n)
 		return (n);
 }
 
-int	ft_putnbr(int n)
+int	ft_putunsigned(unsigned int n)
 {
 	char	str[13];
 	int		is_neg;
