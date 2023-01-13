@@ -28,7 +28,7 @@ static int	ft_case(va_list v_list, const char c)
 		return (ft_putstr("(nil"));
 	}
 	else if (c == 'd' || c == 'i')
-		return (ft_putnbr(va_arg(v_list, int), ));
+		return (ft_putnbr(va_arg(v_list, int)));
 	// else if (c == 'u')
 	// 	return (ft_putunbr_base(va_arg(v_list, unsigned int), "0123456789"));
 	else if (c == 'x' || c == 'X')

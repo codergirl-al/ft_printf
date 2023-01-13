@@ -21,11 +21,6 @@ static int	ft_val(int n)
 		return (n);
 }
 
-/*
-** @brief Write an int
-**
-** @param n:  the interger to be written to the file descripter
-*/
 int	ft_putnbr(int n)
 {
 	char	str[13];
