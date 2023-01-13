@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:48:13 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/01/12 16:04:19 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/01/13 06:05:24 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,24 +41,24 @@ static int	ft_case(va_list v_list, const char c)
 
 int	ft_printf(const char *str, ...)
 {
-	va_list v_list;
+	va_list	v_list;
 	int		count;
 	int		i;
 
 	i = 0;
 	count = 0;
 	va_start(v_list, str);
-	while(str[i])
+	while (str[i])
 	{
 		if (str[i] == '%' && ft_strchr("cspdiuxX%", str[i + 1]) != 0)
 		{
 			count += ft_case(v_list, str[i + 1]);
 			i++;
 		}
-		else 
+		else
 			count += ft_putchar(str[i]);
 		i++;
 	}
 	va_end(v_list);
-	return(0);
+	return (0);
 }

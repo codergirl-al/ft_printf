@@ -1,5 +1,14 @@
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putunsigned.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/13 06:05:45 by apeposhi          #+#    #+#             */
+/*   Updated: 2023/01/13 06:05:48 by apeposhi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
@@ -14,11 +23,9 @@ static int	ft_val(int n)
 int	ft_putunsigned(unsigned int n)
 {
 	char	str[13];
-	int		is_neg;
 	int		length;
 	int		count;
 
-	is_neg = (n < 0);
 	ft_bzero(str, 13);
 	if (n == 0)
 		str[0] = '0';
@@ -28,9 +35,7 @@ int	ft_putunsigned(unsigned int n)
 		str[length++] = '0' + ft_val(n % 10);
 		n = (n / 10);
 	}
-	if (is_neg)
-		str[length] = '-';
-	else if (length > 0)
+	if (length > 0)
 		length--;
 	count = length;
 	while (length >= 0)

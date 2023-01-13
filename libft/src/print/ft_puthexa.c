@@ -6,19 +6,18 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 10:28:41 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/01/12 15:41:45 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/01/13 06:06:52 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-
 static int	ft_decimal_to_hexa(unsigned long long int n, int base, int len)
 {
-	unsigned long long int temp;
-	int remainders[16];
-	int i;
-	int count;
+	unsigned long long int	temp;
+	int						remainders[16];
+	int						i;
+	int						count;
 
 	i = 0;
 	count = 0;
@@ -39,7 +38,7 @@ static int	ft_decimal_to_hexa(unsigned long long int n, int base, int len)
 		count++;
 		i--;
 	}
-	return count;
+	return (count);
 }
 
 int	ft_puthexa(unsigned long long int n, char format)

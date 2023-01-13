@@ -14,8 +14,10 @@ int main()
 	ft_printf("LOWERCASE value is: %x\n", alba);
 	ft_printf("UPPERCASE value is: %X\n", alba);
 	ft_printf("LOWERCASE value is: %x\n", alba);
-	ft_printf("Decimal number is: %d\n", 12.8);
-	printf("Print decimal number is: %d\n", 12.8);
+	ft_printf("Decimal number is: %d\n", 12);
+	printf("Print decimal number is: %d\n", 12);
 	ft_printf("Integer value is: %i\n", alba);
+	ft_printf("Unsigned number is: %u\n", 457358922);
+	printf("Print unsigned number is: %u\n", 457358922);
 	return (0);
 }

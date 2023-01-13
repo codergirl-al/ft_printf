@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:39:51 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/01/09 16:49:02 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/01/13 06:07:14 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,4 @@ int	ft_putstr(char *str)
 	while (str[i])
 		i++;
 	return (write(1, str, i));
-
 }
